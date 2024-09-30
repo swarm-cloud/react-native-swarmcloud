@@ -1,6 +1,7 @@
 {
   "name": "react-native-swarmcloud",
   "version": "0.1.0",
+  "private": false,
   "description": "Official React Native bindings for SwarmCloud's P2P SDKs.",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
@@ -99,11 +100,6 @@
     "modulePathIgnorePatterns": [
       "<rootDir>/example/node_modules",
       "<rootDir>/lib/"
-    ]
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
     ]
   },
   "release-it": {
