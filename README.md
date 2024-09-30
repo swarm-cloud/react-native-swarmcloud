@@ -1,6 +1,7 @@
 
 <h1 align="center"><a href="" target="_blank" rel="noopener noreferrer"><img width="250" src="https://www.cdnbye.com/img/logo.png" alt="logo"></a></h1>
 <h4 align="center">Official React Native bindings for SwarmCloud's P2P SDKs.</h4>
+
 [![npm](https://img.shields.io/npm/v/react-native-swarmcloud.svg)](https://www.npmjs.com/package/react-native-swarmcloud)
 [![npm](https://img.shields.io/npm/l/react-native-swarmcloud.svg)](LICENSE)
 
