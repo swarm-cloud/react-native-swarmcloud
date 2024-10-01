@@ -92,7 +92,7 @@ export function setHttpHeadersForDash(headers: Object) {
   return Swarmcloud.setHttpHeadersForDash(headers);
 }
 
-export function initP2pEngine(token: string, config: Object): Promise<void> {
+export function initP2pEngine(token: string, config: P2pConfig): Promise<void> {
   return Swarmcloud.init(token, config);
 }
 
@@ -110,3 +110,38 @@ export enum LogLevel {
   WARN,
   ERROR,
 }
+
+export type P2pConfig = {
+  logEnabled?: boolean;
+  logLevel?: LogLevel;
+  trackerZone: TrackerZone;
+  p2pEnabled?: boolean;
+  useStrictHlsSegmentId?: boolean;
+  isSetTopBox?: boolean;
+  wifiOnly?: boolean;
+  prefetchOnly?: boolean;
+  downloadOnly?: boolean;
+  useHttpRange?: boolean;
+  logPersistent?: boolean;
+  sharePlaylist?: boolean;
+  fastStartup?: boolean;
+  geoIpPreflight?: boolean;
+  localPortHls?: number;
+  localPortDash?: number;
+  maxPeerConnections?: number;
+  downloadTimeout?: number;
+  dcDownloadTimeout?: number;
+  memoryCacheCountLimit?: number;
+  maxMediaFilesInPlaylist?: number;
+  diskCacheLimit?: number;
+  httpLoadTime?: number;
+  playlistTimeOffset?: number;
+  signalConfig?: string;
+  announce?: string;
+  tag?: string;
+  mediaFileSeparator?: string;
+  httpHeadersForHls?: Object;
+  httpHeadersForDash?: Object;
+  hlsMediaFiles?: string[];
+  dashMediaFiles?: string[];
+};
