@@ -1209,7 +1209,7 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - react-native-swarmcloud (0.1.0):
+  - react-native-swarmcloud (0.2.1):
     - DoubleConversion
     - glog
     - RCT-Folly (= 2024.01.01.00)
@@ -1788,7 +1788,7 @@ SPEC CHECKSUMS:
   React-logger: 4072f39df335ca443932e0ccece41fbeb5ca8404
   React-Mapbuffer: 714f2fae68edcabfc332b754e9fbaa8cfc68fdd4
   React-microtasksnativemodule: 987cf7e0e0e7129250a48b807e70d3b906c726cf
-  react-native-swarmcloud: df318e0b049ad84c776ed946ad64015c9d3c48a5
+  react-native-swarmcloud: 0f8d296778c3019deba84e4f6b2444b14a5f1ace
   react-native-video: 9c4d2aefc3d9535d1d9f9305df7380fa50665a47
   React-nativeconfig: 4a9543185905fe41014c06776bf126083795aed9
   React-NativeModulesApple: 651670a799672bd54469f2981d91493dda361ddf

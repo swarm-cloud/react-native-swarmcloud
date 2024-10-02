@@ -1,11 +1,10 @@
 import type { TurboModule } from 'react-native';
 import { TurboModuleRegistry } from 'react-native';
-import type { P2pConfig } from './index';
 
 export interface Spec extends TurboModule {
   parseStreamURL(url: string, videoId: string | undefined): string;
   getSDKVersion(): string;
-  init(token: string, config: P2pConfig): Promise<void>;
+  init(token: string, config: Object): Promise<void>;
   setHttpHeadersForHls(headers: Object): void;
   setHttpHeadersForDash(headers: Object): void;
   getPeerId(): string | undefined;
