@@ -44,69 +44,69 @@ class SwarmcloudModule internal constructor(context: ReactApplicationContext) :
 
   @ReactMethod(isBlockingSynchronousMethod = true)
   override fun getPeerId(): String? {
-    return P2pEngine.getInstance()?.peerId
+    return P2pEngine.instance?.peerId
   }
 
   @ReactMethod(isBlockingSynchronousMethod = true)
   override fun isConnected(): Boolean {
-    return P2pEngine.getInstance()?.isConnected ?: false
+    return P2pEngine.instance?.isConnected ?: false
   }
 
   @ReactMethod
   override fun notifyPlaybackStalled(promise: Promise) {
-    P2pEngine.getInstance()?.notifyPlaybackStalled()
+    P2pEngine.instance?.notifyPlaybackStalled()
     promise.resolve(true)
   }
 
   @ReactMethod
   override fun restartP2p(promise: Promise) {
-    P2pEngine.getInstance()?.restartP2p(null)
+    P2pEngine.instance?.restartP2p(null)
     promise.resolve(true)
   }
 
   @ReactMethod
   override fun disableP2p(promise: Promise) {
-    P2pEngine.getInstance()?.disableP2p()
+    P2pEngine.instance?.disableP2p()
     promise.resolve(true)
   }
 
   @ReactMethod
   override fun stopP2p(promise: Promise) {
-    P2pEngine.getInstance()?.stopP2p()
+    P2pEngine.instance?.stopP2p()
     promise.resolve(true)
   }
 
   @ReactMethod
   override fun enableP2p(promise: Promise) {
-    P2pEngine.getInstance()?.enableP2p()
+    P2pEngine.instance?.enableP2p()
     promise.resolve(true)
   }
 
   @ReactMethod
   override fun shutdown(promise: Promise) {
-    P2pEngine.getInstance()?.shutdown()
+    P2pEngine.instance?.shutdown()
     promise.resolve(true)
   }
 
   @ReactMethod(isBlockingSynchronousMethod = true)
   override fun setHttpHeadersForHls(headers: ReadableMap) {
-    P2pEngine.getInstance()?.setHttpHeadersForHls(toHashMap(headers))
+    P2pEngine.instance?.setHttpHeadersForHls(toHashMap(headers))
   }
 
   @ReactMethod(isBlockingSynchronousMethod = true)
   override fun setHttpHeadersForDash(headers: ReadableMap) {
-    P2pEngine.getInstance()?.setHttpHeadersForDash(toHashMap(headers))
+    P2pEngine.instance?.setHttpHeadersForDash(toHashMap(headers))
   }
 
   @ReactMethod(isBlockingSynchronousMethod = true)
   override fun parseStreamURL(url: String, videoId: String?): String {
-    if (P2pEngine.getInstance() == null) {
+    if (P2pEngine.instance == null) {
       return url
     }
     val parsedUrl = if (videoId != null) {
-        P2pEngine.getInstance()!!.parseStreamUrl(url, videoId)
+        P2pEngine.instance!!.parseStreamUrl(url, videoId)
     } else {
-        P2pEngine.getInstance()!!.parseStreamUrl(url)
+        P2pEngine.instance!!.parseStreamUrl(url)
     }
     return parsedUrl
   }
@@ -203,9 +203,9 @@ class SwarmcloudModule internal constructor(context: ReactApplicationContext) :
       if (args.hasKey("diskCacheLimit")) {
           builder = builder.diskCacheLimit(args.getInt("diskCacheLimit").toLong())
       }
-      if (args.hasKey("httpLoadTime")) {
-          builder = builder.httpLoadTime(args.getInt("httpLoadTime").toLong())
-      }
+      // if (args.hasKey("httpLoadTime")) {
+      //    builder = builder.httpLoadTime(args.getInt("httpLoadTime").toLong())
+      // }
       if (args.hasKey("playlistTimeOffset")) {
           builder = builder.insertTimeOffsetTag(args.getInt("playlistTimeOffset").toDouble())
       }
@@ -220,9 +220,6 @@ class SwarmcloudModule internal constructor(context: ReactApplicationContext) :
       } else {
           builder = builder.withTag("react-native")
       }
-      if (args.hasKey("mediaFileSeparator")) {
-          builder = builder.mediaFileSeparator(args.getString("mediaFileSeparator")!!)
-      }
       if (args.hasKey("httpHeadersForHls")) {
           val headers = toHashMap(args.getMap("httpHeadersForHls"))
           builder = builder.httpHeadersForHls(headers)
@@ -230,14 +227,6 @@ class SwarmcloudModule internal constructor(context: ReactApplicationContext) :
       if (args.hasKey("httpHeadersForDash")) {
           val headers = toHashMap(args.getMap("httpHeadersForDash"))
           builder = builder.httpHeadersForDash(headers)
-      }
-      if (args.hasKey("hlsMediaFiles")) {
-          val array = args.getArray("hlsMediaFiles")!!
-          val files: ArrayList<String> = ArrayList();
-          for (i in 0 until array.size()) {
-              files.add(array.getString(i))
-          }
-          builder = builder.hlsMediaFiles(files)
       }
       if (args.hasKey("dashMediaFiles")) {
           val array = args.getArray("dashMediaFiles")!!
@@ -252,7 +241,7 @@ class SwarmcloudModule internal constructor(context: ReactApplicationContext) :
 
       P2pEngine.init(reactContext, token, builder.build())
 
-      P2pEngine.getInstance()!!.addP2pStatisticsListener(object : P2pStatisticsListener {
+      P2pEngine.instance!!.addP2pStatisticsListener(object : P2pStatisticsListener {
           override fun onHttpDownloaded(value: Int) {
               val params = Arguments.createMap().apply {
                   putInt("httpDownloaded", value)

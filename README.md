@@ -31,7 +31,7 @@ pod install
 See [documentation](https://www.swarmcloud.net/rn)
 
 ## Request Token
-See [here](https://docs.swarmcloud.net/guides/getting-started#for-mobile-app-integration)
+See [here](https://www.swarmcloud.net/guides/getting-started#for-mobile-app-integration)
 
 ## Dashboard
 Register your AppId at https://dash.swarmcloud.net, where you can view p2p-related information.

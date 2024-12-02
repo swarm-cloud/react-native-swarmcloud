@@ -39,6 +39,6 @@ Pod::Spec.new do |s|
     end
   end
 
-  s.dependency 'SwarmCloudKit', '= 3.2.5'
+  s.dependency 'SwarmCloudKit', '~> 3.0'
 
 end

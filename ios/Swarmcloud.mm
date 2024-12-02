@@ -58,7 +58,7 @@ RCT_EXPORT_METHOD(init: (NSString *)token
     }
     inited = YES;
     P2pConfig* config = [P2pConfig defaultConfiguration];
-    
+
     if ([args objectForKey:@"logEnabled"]) {
         BOOL logEnabled = [[args objectForKey:@"logEnabled"] boolValue];
         if (logEnabled) {
@@ -147,9 +147,9 @@ RCT_EXPORT_METHOD(init: (NSString *)token
     if ([args objectForKey:@"dcDownloadTimeout"]) {
         config.dcDownloadTimeout = [[args objectForKey:@"dcDownloadTimeout"] doubleValue];
     }
-    if ([args objectForKey:@"httpLoadTime"]) {
-        config.httpLoadTime = [[args objectForKey:@"httpLoadTime"] doubleValue];
-    }
+//     if ([args objectForKey:@"httpLoadTime"]) {
+//         config.httpLoadTime = [[args objectForKey:@"httpLoadTime"] doubleValue];
+//     }
     if ([args objectForKey:@"diskCacheLimit"]) {
         config.diskCacheLimit = [[args objectForKey:@"diskCacheLimit"] intValue];
     }
@@ -162,9 +162,6 @@ RCT_EXPORT_METHOD(init: (NSString *)token
     if ([args objectForKey:@"announce"]) {
         config.announce = [args objectForKey:@"announce"];
     }
-    if ([args objectForKey:@"mediaFileSeparator"]) {
-        config.mediaFileSeparator = [args objectForKey:@"mediaFileSeparator"];
-    }
     if ([args objectForKey:@"tag"]) {
         config.customLabel = [args objectForKey:@"tag"];
     } else {
@@ -174,12 +171,7 @@ RCT_EXPORT_METHOD(init: (NSString *)token
         NSDictionary *headers = [args objectForKey:@"httpHeadersForHls"];
         config.httpHeadersHls = headers;
     }
-    if ([args objectForKey:@"hlsMediaFiles"]) {
-        NSArray *files = [args objectForKey:@"hlsMediaFiles"];
-        config.hlsMediaFiles = files;
-    }
-    
-    config.logLevel = LogLevelDEBUG;
+
     [P2pEngine setupWithToken:token config:config];  // replace with your own token
     [self startMonitor];
     resolve(@(YES));
@@ -240,12 +232,12 @@ RCT_EXPORT_METHOD(setHttpHeadersForDash: (nullable NSDictionary<NSString *,NSStr
 - (void)startMonitor {
     P2pStatisticsMonitor* monitor = [[P2pStatisticsMonitor alloc] initWithQueue:dispatch_get_main_queue()];
     P2pEngine.shared.p2pStatisticsMonitor = monitor;
-    
+
     monitor.onPeers = ^(NSArray<NSString *> * _Nonnull peers) {
         if (self->hasListeners) {
             [self sendEventWithName:@"stats" body:@{@"peers": peers}];
         }
-        
+
     };
     monitor.onP2pUploaded = ^(NSInteger value) {
         if (self->hasListeners) {

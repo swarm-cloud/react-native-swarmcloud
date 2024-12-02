@@ -134,14 +134,11 @@ export type P2pConfig = {
   memoryCacheCountLimit?: number;
   maxMediaFilesInPlaylist?: number;
   diskCacheLimit?: number;
-  httpLoadTime?: number;
   playlistTimeOffset?: number;
   signalConfig?: string;
   announce?: string;
   tag?: string;
-  mediaFileSeparator?: string;
   httpHeadersForHls?: Object;
   httpHeadersForDash?: Object;
-  hlsMediaFiles?: string[];
   dashMediaFiles?: string[];
 };

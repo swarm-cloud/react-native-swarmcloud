@@ -105,6 +105,9 @@ android {
 repositories {
   mavenCentral()
   google()
+  maven{
+      url 'https://maven.swarmcloud.net/repository/maven-releases/'
+  }
 }
 
 def kotlin_version = getExtOrDefault("kotlinVersion")
@@ -115,11 +118,11 @@ dependencies {
   //noinspection GradleDynamicVersion
   implementation "com.facebook.react:react-native:+"
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-  implementation fileTree(dir: 'libs', include: ['*.aar', '*.jar'])
-//   implementation(name: 'datachannel', ext: 'aar')
   implementation("com.squareup.okhttp3:okhttp:3.12.13")
   implementation("com.orhanobut:logger:2.2.0")
   implementation("com.google.code.gson:gson:2.9.0")
+  implementation("com.cdnbye:datachannel_native:1.0.211")
+  implementation("com.cdnbye:p2p_engine:latest.release")
 }
 
 if (isNewArchitectureEnabled()) {

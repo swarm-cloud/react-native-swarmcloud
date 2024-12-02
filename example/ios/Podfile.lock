@@ -1209,7 +1209,7 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - react-native-swarmcloud (0.2.1):
+  - react-native-swarmcloud (0.3.1):
     - DoubleConversion
     - glog
     - RCT-Folly (= 2024.01.01.00)
@@ -1229,7 +1229,7 @@ PODS:
     - ReactCodegen
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
-    - SwarmCloudKit (= 3.2.5)
+    - SwarmCloudKit (~> 3.0)
     - Yoga
   - react-native-video (6.6.2):
     - DoubleConversion
@@ -1544,7 +1544,7 @@ PODS:
     - React-jsi
   - ReactTestApp-Resources (1.0.0-dev)
   - SocketRocket (0.7.0)
-  - SwarmCloudKit (3.2.5)
+  - SwarmCloudKit (3.3.1)
   - Yoga (0.0.0)
 
 DEPENDENCIES:
@@ -1788,7 +1788,7 @@ SPEC CHECKSUMS:
   React-logger: 4072f39df335ca443932e0ccece41fbeb5ca8404
   React-Mapbuffer: 714f2fae68edcabfc332b754e9fbaa8cfc68fdd4
   React-microtasksnativemodule: 987cf7e0e0e7129250a48b807e70d3b906c726cf
-  react-native-swarmcloud: 0f8d296778c3019deba84e4f6b2444b14a5f1ace
+  react-native-swarmcloud: 9754d04da99504e5a2bf58091b8f9db9dddf5622
   react-native-video: 9c4d2aefc3d9535d1d9f9305df7380fa50665a47
   React-nativeconfig: 4a9543185905fe41014c06776bf126083795aed9
   React-NativeModulesApple: 651670a799672bd54469f2981d91493dda361ddf
@@ -1819,7 +1819,7 @@ SPEC CHECKSUMS:
   ReactTestApp-DevSupport: b7cd76a3aeee6167f5e14d82f09685059152c426
   ReactTestApp-Resources: 7db90c026cccdf40cfa495705ad436ccc4d64154
   SocketRocket: abac6f5de4d4d62d24e11868d7a2f427e0ef940d
-  SwarmCloudKit: e73eb9e0de2cd02ac464d9cacc681400ab1f3752
+  SwarmCloudKit: 5c77f3b734cc62730461be518dc72ce93034257b
   Yoga: 4ef80d96a5534f0e01b3055f17d1e19a9fc61b63
 
 PODFILE CHECKSUM: a703486d9d112c252963e0b04ab4c0701a86cff3
