@@ -1544,7 +1544,7 @@ PODS:
     - React-jsi
   - ReactTestApp-Resources (1.0.0-dev)
   - SocketRocket (0.7.0)
-  - SwarmCloudKit (3.3.1)
+  - SwarmCloudKit (3.3.2)
   - Yoga (0.0.0)
 
 DEPENDENCIES:
@@ -1819,7 +1819,7 @@ SPEC CHECKSUMS:
   ReactTestApp-DevSupport: b7cd76a3aeee6167f5e14d82f09685059152c426
   ReactTestApp-Resources: 7db90c026cccdf40cfa495705ad436ccc4d64154
   SocketRocket: abac6f5de4d4d62d24e11868d7a2f427e0ef940d
-  SwarmCloudKit: 5c77f3b734cc62730461be518dc72ce93034257b
+  SwarmCloudKit: 310f8d1c81c131540aa75228cf2a82bf4b91afb0
   Yoga: 4ef80d96a5534f0e01b3055f17d1e19a9fc61b63
 
 PODFILE CHECKSUM: a703486d9d112c252963e0b04ab4c0701a86cff3

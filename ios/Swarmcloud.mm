@@ -156,6 +156,9 @@ RCT_EXPORT_METHOD(init: (NSString *)token
     if ([args objectForKey:@"memoryCacheCountLimit"]) {
         config.memoryCacheCountLimit = [[args objectForKey:@"memoryCacheCountLimit"] intValue];
     }
+    if ([args objectForKey:@"startFromSegmentOffset"]) {
+        config.startFromSegmentOffset = [[args objectForKey:@"startFromSegmentOffset"] intValue];
+    }
     if ([args objectForKey:@"signalConfig"]) {
         config.signalConfig = [[SignalConfig alloc] initWithMainAddr:[args objectForKey:@"signalConfig"] backupAddr:nil];
     }

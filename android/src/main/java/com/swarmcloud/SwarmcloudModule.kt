@@ -197,6 +197,9 @@ class SwarmcloudModule internal constructor(context: ReactApplicationContext) :
       if (args.hasKey("memoryCacheCountLimit")) {
           builder = builder.memoryCacheCountLimit(args.getInt("memoryCacheCountLimit"))
       }
+      if (args.hasKey("startFromSegmentOffset")) {
+          builder = builder.startFromSegmentOffset(args.getInt("startFromSegmentOffset"))
+      }
       if (args.hasKey("maxMediaFilesInPlaylist")) {
           builder = builder.maxMediaFilesInPlaylist(args.getInt("maxMediaFilesInPlaylist"))
       }

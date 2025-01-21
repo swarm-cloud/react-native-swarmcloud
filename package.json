@@ -1,6 +1,6 @@
 {
   "name": "react-native-swarmcloud",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "private": false,
   "description": "Official React Native bindings for SwarmCloud's P2P SDKs.",
   "source": "./src/index.tsx",
