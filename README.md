@@ -28,10 +28,10 @@ pod install
 ```
 
 ## Usage
-See [documentation](https://www.swarmcloud.net/rn)
+See [documentation](https://www.swarmcloud.net/rn?utm_source=github)
 
 ## Request Token
-See [here](https://www.swarmcloud.net/guides/getting-started#for-mobile-app-integration)
+See [here](https://www.swarmcloud.net/guides/getting-started#for-mobile-app-integration?utm_source=github)
 
 ## Dashboard
 Register your AppId at https://dash.swarmcloud.net, where you can view p2p-related information.
@@ -47,7 +47,7 @@ Register your AppId at https://dash.swarmcloud.net, where you can view p2p-relat
 - [flutter-p2p-engine](https://github.com/cdnbye/flutter-p2p-engine) -  Official Flutter bindings for SwarmCloud's P2P SDKs.
 
 ## FAQ
-We have collected some [frequently asked questions](https://www.swarmcloud.net/faq). Before reporting an issue, please search if the FAQ has the answer to your problem.
+We have collected some [frequently asked questions](https://www.swarmcloud.net/faq?utm_source=github). Before reporting an issue, please search if the FAQ has the answer to your problem.
 
 ## Contact Us
 Email：service@cdnbye.com
